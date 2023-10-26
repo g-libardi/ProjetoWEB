@@ -39,7 +39,7 @@ def add_message(message, nickname):
 @app.route('/')
 def index():
     if request.headers.getlist("X-Forwarded-For"):
-        ip = request.headers.getlist("X-Forwarded-For")[0]
+        ip = request.headers['X-Forwarded-For'].split(',')[0]
     else:
         ip = flask.request.remote_addr
     counter = increment_counter()
