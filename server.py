@@ -18,6 +18,6 @@ class GUnicornFlaskApplication(BaseApplication):
 if __name__ == '__main__':
     options = {
         'bind': '0.0.0.0:50135',
-        'workers': 4,
+        'workers': 1,
     }
     GUnicornFlaskApplication(app, options).run()
